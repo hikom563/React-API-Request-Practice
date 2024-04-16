@@ -8,18 +8,27 @@ const SearchBar = ({ onSubmit }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     onSubmit(term);
+    setTerm("");
   };
 
   const handleChange = (event) => {
     setTerm(event.target.value);
   };
   return (
-    <div className="search-bar">
-      <form onSubmit={handleFormSubmit}>
-        <label>Enter Search Term and Press Enter Key</label>
-        <input value={term} onChange={handleChange} />
-      </form>
-    </div>
+    <>
+      <div className="search-bar">
+        <form onSubmit={handleFormSubmit}>
+          <input
+            placeholder="Type to search"
+            value={term}
+            onChange={handleChange}
+          />
+        </form>
+      </div>
+      <button class="button-18" onClick={handleFormSubmit}>
+        Search
+      </button>
+    </>
   );
 };
 

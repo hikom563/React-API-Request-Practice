@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import searchImages from "./api";
 import ImageList from "./components/ImageList";
 import { useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -12,10 +13,19 @@ const App = () => {
     setImages(result);
   };
   return (
-    <div>
-      <SearchBar onSubmit={handleSubmit} />
-      <ImageList images={images} />
-    </div>
+    <>
+      <h1 className="heading" >Search for Free Stock Images</h1>
+      <div className="App">
+        <div className="search-bar-container">
+          <div>
+            <SearchBar onSubmit={handleSubmit} />
+          </div>
+          <div>
+            <ImageList images={images} />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
