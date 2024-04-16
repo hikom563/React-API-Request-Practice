@@ -15,6 +15,7 @@ const App = () => {
   return (
     <>
       <h1 className="heading" >Search for Free Stock Images</h1>
+      <h2 className="heading2" >I am using Unsplash API</h2>
       <div className="App">
         <div className="search-bar-container">
           <div>
